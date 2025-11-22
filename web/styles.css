@@ -1,0 +1,229 @@
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== SHARED FONT & ANIMATED BACKGROUND ===== */
+html, body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Deep gradient background */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white; /* Default text to white */
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ============================================================
+   FORM PAGE (only applies when <body> has NO class="profile-body")
+   ============================================================ */
+body:not(.profile-body) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* FORM CONTAINER - GLASS STYLE */
+.container {
+    width: 450px;
+    /* Low opacity white for transparency */
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 40px;
+    border-radius: 24px;
+    /* Blur the background behind the card */
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    /* Subtle border to define edges */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* FORM TITLE */
+.container h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* FORM LABEL */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* TRANSPARENT INPUT FIELDS */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    /* Transparent input background */
+    background: rgba(255, 255, 255, 0.15); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    margin-top: 6px;
+    font-size: 15px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* SUBMIT BUTTON - SOLID CONTRAST */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #ffffff;
+    color: #e73c7e; /* Matching the gradient theme */
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: scale(1.02);
+    background: #f0f0f0;
+}
+
+/* ============================================================
+   PROFILE DISPLAY PAGE (when <body class="profile-body"> )
+   ============================================================ */
+
+.profile-body {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* INTRO SECTION GLASS */
+.intro-container {
+    max-width: 850px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 28px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.intro-container h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    /* Neon Yellow highlight for contrast */
+    color: #ffe600; 
+    text-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
+}
+
+.intro-container h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.intro-text {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #ffffff;
+    white-space: pre-line;
+}
+
+/* DETAILS CARD GLASS */
+.details-card {
+    max-width: 850px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.details-card h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 15px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 40px;
+}
+
+/* INDIVIDUAL DETAIL PANES */
+.detail-item {
+    /* Slightly more opaque than container for depth */
+    background: rgba(255, 255, 255, 0.15); 
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+}
+
+.value {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 8px;
+    display: block;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
