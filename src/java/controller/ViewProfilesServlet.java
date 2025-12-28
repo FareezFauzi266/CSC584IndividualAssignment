@@ -26,7 +26,7 @@ public class ViewProfilesServlet extends HttpServlet {
             throws ServletException, IOException {
 
         List<ProfileBean> listProfile = new ArrayList<>();
-        String searchId = request.getParameter("searchId"); // Get search term
+        String searchId = request.getParameter("searchId");
 
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -38,7 +38,6 @@ public class ViewProfilesServlet extends HttpServlet {
 
             String sql;
             
-            // UNIQUE FEATURE: Logic to switch between Search and View All
             if (searchId != null && !searchId.trim().isEmpty()) {
                 sql = "SELECT * FROM profile WHERE studentId LIKE ?";
                 stmt = conn.prepareStatement(sql);
@@ -50,7 +49,7 @@ public class ViewProfilesServlet extends HttpServlet {
 
             rs = stmt.executeQuery();
 
-            // Loop through results and add to List
+          
             while (rs.next()) {
                 ProfileBean p = new ProfileBean();
                 p.setName(rs.getString("name"));
@@ -58,7 +57,6 @@ public class ViewProfilesServlet extends HttpServlet {
                 p.setProgram(rs.getString("program"));
                 p.setEmail(rs.getString("email"));
                 p.setHobbies(rs.getString("hobbies"));
-                // intro is typically too long for a list view, so we skip it here
                 listProfile.add(p);
             }
 

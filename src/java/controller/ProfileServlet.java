@@ -49,7 +49,7 @@ public class ProfileServlet extends HttpServlet {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             conn = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 
-            // SQL Insert
+          
             String sql = "INSERT INTO profile (name, studentId, program, email, hobbies, intro) VALUES (?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, name);
@@ -64,7 +64,6 @@ public class ProfileServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            // Close resources
             try { if (stmt != null) stmt.close(); } catch (SQLException e) {}
             try { if (conn != null) conn.close(); } catch (SQLException e) {}
         }

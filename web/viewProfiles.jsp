@@ -7,7 +7,6 @@
     <title>Student Directory</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Simple table styling for the list */
         .search-container { margin-bottom: 20px; }
         table { width: 100%; border-collapse: collapse; margin-top: 10px; color: white; }
         th, td { border: 1px solid rgba(255,255,255,0.3); padding: 12px; text-align: left; }

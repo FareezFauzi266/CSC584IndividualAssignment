@@ -1,11 +1,10 @@
-/* ===== GLOBAL RESET ===== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===== SHARED FONT & ANIMATED BACKGROUND ===== */
 html, body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     /* Deep gradient background */
@@ -22,9 +21,6 @@ html, body {
     100% { background-position: 0% 50%; }
 }
 
-/* ============================================================
-   FORM PAGE (only applies when <body> has NO class="profile-body")
-   ============================================================ */
 body:not(.profile-body) {
     display: flex;
     justify-content: center;
@@ -32,22 +28,16 @@ body:not(.profile-body) {
     padding: 20px;
 }
 
-/* FORM CONTAINER - GLASS STYLE */
 .container {
     width: 450px;
-    /* Low opacity white for transparency */
     background: rgba(255, 255, 255, 0.1); 
     padding: 40px;
     border-radius: 24px;
-    /* Blur the background behind the card */
     backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
-    /* Subtle border to define edges */
     border: 1px solid rgba(255, 255, 255, 0.2); 
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
-
-/* FORM TITLE */
 .container h1 {
     text-align: center;
     font-size: 32px;
@@ -57,7 +47,6 @@ body:not(.profile-body) {
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* FORM LABEL */
 label {
     display: block;
     font-size: 14px;
@@ -67,13 +56,11 @@ label {
     letter-spacing: 0.5px;
 }
 
-/* TRANSPARENT INPUT FIELDS */
 input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
     padding: 12px 14px;
-    /* Transparent input background */
     background: rgba(255, 255, 255, 0.15); 
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
@@ -91,12 +78,11 @@ textarea:focus {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-/* SUBMIT BUTTON - SOLID CONTRAST */
 button {
     width: 100%;
     padding: 14px;
     background: #ffffff;
-    color: #e73c7e; /* Matching the gradient theme */
+    color: #e73c7e;
     border: none;
     border-radius: 14px;
     font-size: 16px;
@@ -112,9 +98,6 @@ button:hover {
     background: #f0f0f0;
 }
 
-/* ============================================================
-   PROFILE DISPLAY PAGE (when <body class="profile-body"> )
-   ============================================================ */
 
 .profile-body {
     padding: 40px 20px;
@@ -124,7 +107,7 @@ button:hover {
     gap: 40px;
 }
 
-/* INTRO SECTION GLASS */
+
 .intro-container {
     max-width: 850px;
     width: 100%;
@@ -146,7 +129,6 @@ button:hover {
 }
 
 .highlight {
-    /* Neon Yellow highlight for contrast */
     color: #ffe600; 
     text-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
 }
@@ -167,7 +149,6 @@ button:hover {
     white-space: pre-line;
 }
 
-/* DETAILS CARD GLASS */
 .details-card {
     max-width: 850px;
     width: 100%;
@@ -196,9 +177,7 @@ button:hover {
     gap: 25px 40px;
 }
 
-/* INDIVIDUAL DETAIL PANES */
 .detail-item {
-    /* Slightly more opaque than container for depth */
     background: rgba(255, 255, 255, 0.15); 
     padding: 20px;
     border-radius: 16px;
